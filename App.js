@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation'; // eslint-disable-line
+import { Icon } from 'react-native-elements';
 import { Provider } from 'react-redux';
 
 import store from './store';
@@ -23,6 +24,10 @@ const MainNavigator = createBottomTabNavigator({
         map: { screen: MapScreen },
         deck: { screen: DeckScreen },
         review: ReviewStack
+    }, {
+      tabBarOptions: {
+        labelStyle: { fontSize: 12 }
+      }
     })
   }
 }, {
@@ -32,7 +37,8 @@ const MainNavigator = createBottomTabNavigator({
 });
 
 ReviewStack.navigationOptions = {
-  title: 'Review Jobs'
+  title: 'Review Jobs',
+  tabBarIcon: ({ tintColor }) => <Icon size={30} name="favorite" color={tintColor} />
 };
 
 class App extends React.Component {

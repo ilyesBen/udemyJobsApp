@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import { ScrollView, Platform, View, Text, Linking } from 'react-native';
-import { Button, Card } from 'react-native-elements';
+import { Button, Card, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { MapView } from 'expo';
 
 class ReviewScreen extends Component {
+
   static navigationOptions = ({ navigation }) => (
     {
       headerTitle: 'Review Jobs',
+      tabBarIcon: (
+        <Icon
+          name="favorite"
+          size={30}
+        />
+      ),
       headerRight: (
         <Button
           title="Settings"
